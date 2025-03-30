@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wardrobe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Wardrobe</h1>
+    </header>
+    
+    <nav>
+        <button onclick="showSection('wardrobe')">🏠 Wardrobe</button>
+        <button onclick="showSection('planner')">📅 Planner</button>
+        <button onclick="showSection('reminders')">🔔 Reminders</button>
+    </nav>
+    
+    <section id="wardrobe" class="active">
+        <h2>My Clothes</h2>
+        <div class="grid" id="clothesGrid"></div>
+        <button class="add-btn" onclick="openUploadModal()">+</button>
+    </section>
+    
+    <section id="planner">
+        <h2>Outfit Planner</h2>
+        <div class="calendar" id="calendar"></div>
+    </section>
+    
+    <section id="reminders">
+        <h2>Reminders</h2>
+        <ul id="reminderList"></ul>
+    </section>
+    
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h3>Upload Clothing</h3>
+            <input type="file" id="clothingImage">
+            <input type="text" id="clothingName" placeholder="Item Name">
+            <button onclick="addClothing()">Add</button>
+            <button onclick="closeUploadModal()">Cancel</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
