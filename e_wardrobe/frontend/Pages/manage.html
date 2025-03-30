@@ -1,0 +1,71 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wardrobe Manager</title>
+  <link rel="stylesheet" href="../style/manage.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Wardrobe Manager</h1>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar / Navigation Panel -->
+    <div class="sidebar">
+      <button class="add-btn" id="openModal">Add New Item</button>
+      <ul>
+        <li data-category="All">All</li>
+        <li data-category="Tops">Tops</li>
+        <li data-category="Bottoms">Bottoms</li>
+        <li data-category="Shoes">Shoes</li>
+        <li data-category="Accessories">Accessories</li>
+      </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <input type="text" id="searchInput" placeholder="Search items...">
+      <div class="grid" id="itemGrid">
+        <!-- Item cards will be added here dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Adding New Item -->
+  <div class="modal" id="itemModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Add New Wardrobe Item</h2>
+      <form id="itemForm">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" required>
+
+        <label for="itemCategory">Category:</label>
+        <select id="itemCategory" required>
+          <option value="Tops">Tops</option>
+          <option value="Bottoms">Bottoms</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+
+        <label for="itemImage">Image URL:</label>
+        <input type="text" id="itemImage" placeholder="Enter image URL" required>
+
+        <label for="itemDescription">Description:</label>
+        <textarea id="itemDescription" rows="3"></textarea>
+
+        <button type="submit" class="add-btn">Add Item</button>
+      </form>
+    </div>
+  </div>
+
+ 
+
+  <script src="../scripts/manage.js"></script>
+
+</body>
+</html>

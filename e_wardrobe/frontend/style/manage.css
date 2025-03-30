@@ -1,0 +1,126 @@
+ /* Global Styles */
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    min-height: calc(100vh - 60px);
+  }
+  /* Sidebar Styles */
+  .sidebar {
+    width: 200px;
+    background: #f4f4f4;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .sidebar li {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  .sidebar li:hover {
+    background: #ddd;
+  }
+  .add-btn {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* Main Content Styles */
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+  }
+  #searchInput {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: scale(1.02);
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .card h3 {
+    margin: 0.5rem 0;
+  }
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 300px;
+    position: relative;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  .modal form input, .modal form select, .modal form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .modal form button {
+    width: 100%;
+    padding: 0.5rem;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
