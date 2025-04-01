@@ -1,48 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Wardrobe</title>
-    <link rel="stylesheet" href="../style/wardrobe.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wardrobe Manager</title>
+  <link rel="stylesheet" href="../style/wardrobe.css" />
 </head>
 <body>
-    <header>
-        <h1>My Wardrobe</h1>
-    </header>
-    
-    <nav>
-        <button onclick="showSection('wardrobe')">🏠 Wardrobe</button>
-        <button onclick="showSection('planner')">📅 Planner</button>
-        <button onclick="showSection('reminders')">🔔 Reminders</button>
-    </nav>
-    
-    <section id="wardrobe" class="active">
-        <h2>My Clothes</h2>
-        <div class="grid" id="clothesGrid"></div>
-        <button class="add-btn" onclick="openUploadModal()">+</button>
-    </section>
-    
-    <section id="planner">
-        <h2>Outfit Planner</h2>
-        <div class="calendar" id="calendar"></div>
-    </section>
-    
-    <section id="reminders">
-        <h2>Reminders</h2>
-        <ul id="reminderList"></ul>
-    </section>
-    
-    <div id="uploadModal" class="modal">
-        <div class="modal-content">
-            <h3>Upload Clothing</h3>
-            <input type="file" id="clothingImage">
-            <input type="text" id="clothingName" placeholder="Item Name">
-            <button onclick="addClothing()">Add</button>
-            <button onclick="closeUploadModal()">Cancel</button>
-        </div>
+  <header>
+    <h1>My Stylish Wardrobe</h1>
+  </header>  <nav>
+    <button onclick="showSection('wardrobe')">Wardrobe</button>
+    <button onclick="showSection('planner')">Planner</button>
+    <button onclick="showSection('reminders')">Reminders</button>
+  </nav>  <section id="wardrobe" class="active">
+    <h2>Upload & View Clothes</h2>
+    <div class="grid-controls">
+      <button class="add-btn" onclick="openUploadModal()">+ Add Outfit</button>
     </div>
-    
-    <script src="../script/wardrobe.js"></script>
-</body>
+    <div class="category-section">
+      <h3>Tops</h3>
+      <div class="grid" id="topsGrid"></div>
+    </div>
+    <div class="category-section">
+      <h3>Bottoms</h3>
+      <div class="grid" id="bottomsGrid"></div>
+    </div>
+    <div class="category-section">
+      <h3>Accessories</h3>
+      <div class="grid" id="accessoriesGrid"></div>
+    </div>
+  </section>  <section id="planner">
+    <h2>Plan Your Outfits</h2>
+    <div id="calendar"></div>
+    <h3>Outfits Scheduled</h3>
+    <ul id="outfitItems"></ul>
+  </section>  <section id="reminders">
+    <h2>Reminders</h2>
+    <ul id="reminderList"></ul>
+  </section>  <div id="uploadModal" class="modal">
+    <div class="modal-content">
+      <h3>Add New Clothing Item</h3>
+      <input type="file" id="clothingImage" accept="image/*" />
+      <input type="text" id="clothingName" placeholder="Item Name" />
+      <select id="clothingCategory">
+        <option value="tops">Top</option>
+        <option value="bottoms">Bottom</option>
+        <option value="accessories">Accessory</option>
+      </select>
+      <button onclick="addClothing()">Add</button>
+      <button onclick="closeUploadModal()">Cancel</button>
+    </div>
+  </div>  <script src="../script/wardrobe.js"></script></body>
 </html>
