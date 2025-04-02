@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b3a34;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #2e8b57;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+}
+
+#story-form {
+    background: #3e6f5e;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#story-form h2 {
+    color: #c9f7e4;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #c9f7e4;
+    color: #1b3a34;
+    font-size: 16px;
+}
+
+button {
+    background: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #256d47;
+}
+
+#stories {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#stories h2 {
+    color: #c9f7e4;
+}
+
+.story {
+    background: #4a7b69;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.story p {
+    margin: 0;
+    flex: 1;
+}
+
+.delete-btn {
+    background: #b22222;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #8b1a1a;
+}
+
+@media (max-width: 600px) {
+    #story-form, #stories {
+        width: 95%;
+    }
+}

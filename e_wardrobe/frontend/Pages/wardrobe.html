@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +10,14 @@
 <body>
   <header>
     <h1>My Stylish Wardrobe</h1>
-  </header>  <nav>
+  </header>
+  <nav>
     <button onclick="showSection('wardrobe')">Wardrobe</button>
     <button onclick="showSection('planner')">Planner</button>
     <button onclick="showSection('reminders')">Reminders</button>
-  </nav>  <section id="wardrobe" class="active">
+  </nav>
+  
+  <section id="wardrobe" class="active">
     <h2>Upload & View Clothes</h2>
     <div class="grid-controls">
       <button class="add-btn" onclick="openUploadModal()">+ Add Outfit</button>
@@ -29,15 +34,23 @@
       <h3>Accessories</h3>
       <div class="grid" id="accessoriesGrid"></div>
     </div>
-  </section>  <section id="planner">
+  </section>
+  
+  <section id="planner">
     <h2>Plan Your Outfits</h2>
     <div id="calendar"></div>
     <h3>Outfits Scheduled</h3>
     <ul id="outfitItems"></ul>
-  </section>  <section id="reminders">
+  </section>
+  
+  <section id="reminders">
     <h2>Reminders</h2>
+    <input type="text" id="reminderText" placeholder="Enter reminder..." />
+    <button onclick="addReminder()">Add Reminder</button>
     <ul id="reminderList"></ul>
-  </section>  <div id="uploadModal" class="modal">
+  </section>
+  
+  <div id="uploadModal" class="modal">
     <div class="modal-content">
       <h3>Add New Clothing Item</h3>
       <input type="file" id="clothingImage" accept="image/*" />
@@ -50,5 +63,8 @@
       <button onclick="addClothing()">Add</button>
       <button onclick="closeUploadModal()">Cancel</button>
     </div>
-  </div>  <script src="../script/wardrobe.js"></script></body>
+  </div>
+  
+  <script src="../script/wardrobe.js"></script>
+</body>
 </html>
