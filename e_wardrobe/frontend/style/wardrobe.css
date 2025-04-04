@@ -124,6 +124,16 @@ section.active {
   align-items: center;
 }
 
+
+/* 
+#uploadModal {
+
+display: block ! important;
+
+
+} */
+
+
 .modal-content {
   background: #15462b;
   padding: 20px;
