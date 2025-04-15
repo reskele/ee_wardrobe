@@ -18,10 +18,11 @@ function addClothing() {
   const name = document.getElementById("clothingName").value.trim();
   const category = document.getElementById("clothingCategory").value;
   const imageInput = document.getElementById("clothingImage");
-  const season = document.getElementById("clothingSeason");
+  const season = document.getElementById("clothingSeason").value.trim(); // Get the season value
 
-  if (!name || !imageInput.files.length) {
-    alert("Please provide both name and image.");
+  // Validate inputs
+  if (!name || !imageInput.files.length || !season) {
+    alert("Please provide name, image, and season.");
     return;
   }
 
@@ -31,12 +32,24 @@ function addClothing() {
     const itemCard = document.createElement("div");
     itemCard.className = "clothing-item";
     itemCard.innerHTML = `
-            <img src="${imgSrc}" alt="${name}" />
-            <p>${name}</p>
-            <button class="delete-btn" onclick="deleteClothing(this)">Delete</button>
-        `;
+      <img src="${imgSrc}" alt="${name}" />
+      <p>${name}</p>
+      <p>Season: ${season}</p> <!-- Include season in the card -->
+      <button class="delete-btn" onclick="deleteClothing(this)">Delete</button><br>
+       <a href="donate.html"><button class="add-btn" >Donate</button></a>
 
-    document.getElementById(`${category}Grid`).appendChild(itemCard);
+    `;
+
+    // Ensure the category matches the updated grid IDs
+    const gridId = category.replace(/\s+/g, '') + "Grid"; // Remove spaces and append "Grid"
+    const gridElement = document.getElementById(gridId);
+
+    if (gridElement) {
+      gridElement.appendChild(itemCard);
+    } else {
+      console.error(`Grid with ID '${gridId}' not found.`);
+    }
+
     closeUploadModal();
     clearForm();
   };

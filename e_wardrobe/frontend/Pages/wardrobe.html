@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-    <h1>My Stylish Wardrobe</h1>
+    <h1>My E-Wardrobe</h1>
   </header>
   <nav>
     <button onclick="showSection('wardrobe')">Wardrobe</button>
@@ -24,11 +24,11 @@
     </div>
     <div class="category-section">
       <h3>Top fits</h3>
-      <div class="grid" id="topsGrid"></div>
+      <div class="grid" id="topfitsGrid"></div>
     </div>
     <div class="category-section">
       <h3>Bottom fits</h3>
-      <div class="grid" id="bottomsGrid"></div>
+      <div class="grid" id="bottomfitsGrid"></div>
     </div>
     <div class="category-section">
       <h3>Accessories</h3>
@@ -58,7 +58,13 @@
       <h3>Add New Clothing Item</h3>
       <input type="file" id="clothingImage" accept="image/*" />
       <input type="text" id="clothingName" placeholder="Item Name" />
-      <input type="text" id="season" placeholder="Season" />
+      <select id="clothingSeason">
+        <option value="winter">Winter</option>
+        <option value="spring">Spring</option>
+        <option value="autumn">Autumn</option>
+        <option value="summer">Summer</option>
+        <option value="any">Any</option>
+      </select>
       <select id="clothingCategory">
         <option value="top fits">Top fits</option>
         <option value="bottom fits">Bottom fits</option>
@@ -67,6 +73,7 @@
       </select>
       <button onclick="addClothing()">Add</button>
       <button onclick="closeUploadModal()">Cancel</button>
+      
     </div>
   </div>
   
