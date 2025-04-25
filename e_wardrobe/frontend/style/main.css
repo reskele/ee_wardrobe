@@ -77,11 +77,23 @@ font-family: sans-serif;
  }
 
 
- .nav{
-align-items: center;
-padding: auto;
-color: #fff;
-box-sizing: 1opx;
-border: #111;
+ nav{
 
+background-color: darkgreen;
+overlay: hidden;
+
+ }
+
+ nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+
+ }
+
+ nav a :hover{
+  background-color: black;
  }

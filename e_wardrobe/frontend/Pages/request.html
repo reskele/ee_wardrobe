@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Donation - E-Wardrobe</title>
+  <link rel="stylesheet" href="../style/request.css">
+</head>
+<body>
+  <header>
+    <h1>Request a Donation</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="wardrobe.html">Wardrobe</a>
+      <a href="donate.html">Donate</a>
+      <a href="aboutus.html">About Us</a>
+    </nav>
+  </header>
+  <main>
+    <section class="request-form">
+      <h2>Fill Out the Form Below</h2>
+      <form id="donationRequestForm">
+        <label for="requesterName">Your Name:</label>
+        <input type="text" id="requesterName" placeholder="Enter your name" required>
+
+        <label for="requesterEmail">Your Email:</label>
+        <input type="email" id="requesterEmail" placeholder="Enter your email" required>
+
+        <label for="requestedItem">Requested Item:</label>
+        <input type="text" id="requestedItem" placeholder="Enter the item you need" required>
+
+        <label for="reason">Reason for Request:</label>
+        <textarea id="reason" placeholder="Explain why you need this item" required></textarea>
+
+        <button type="submit">Submit Request</button>
+      </form>
+      <div id="confirmationMessage" class="hidden">
+        <h3>Thank you for your request!</h3>
+        <p>We will review your request and get back to you shortly.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 E-Wardrobe. All rights reserved.</p>
+  </footer>
+  <script src="../script/request.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wardrobe Manager</title>
   <link rel="stylesheet" href="../style/wardrobe.css" />
+  <style>
+    .clothing-item button {
+        margin: 5px;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .clothing-item button:nth-child(2) { /* Style for the Donate button */
+        background-color: #28a745;
+        color: white;
+    }
+
+    .clothing-item button:nth-child(2):hover {
+        background-color: #218838;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -66,10 +83,10 @@
         <option value="any">Any</option>
       </select>
       <select id="clothingCategory">
-        <option value="top fits">Top fits</option>
-        <option value="bottom fits">Bottom fits</option>
-        <option value="accessories">Accessories</option>
-        <option value="foot wear">Foot wear</option>
+        <option value="topfitsGrid">Top fits</option> <!-- Updated value -->
+        <option value="bottomfitsGrid">Bottom fits</option> <!-- Updated value -->
+        <option value="accessoriesGrid">Accessories</option>
+        <option value="footwearGrid">Foot wear</option> <!-- Updated value -->
       </select>
       <button onclick="addClothing()">Add</button>
       <button onclick="closeUploadModal()">Cancel</button>
@@ -78,5 +95,52 @@
   </div>
   
   <script src="../script/wardrobe.js"></script>
+  <script>
+    function addClothing() {
+        const name = document.getElementById('clothingName').value.trim();
+        const category = document.getElementById('clothingCategory').value;
+        const imageInput = document.getElementById('clothingImage');
+
+        if (!name || !imageInput.files.length) {
+            alert('Please provide both name and image.');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const imgSrc = e.target.result;
+            const itemCard = document.createElement('div');
+            itemCard.className = 'clothing-item';
+            itemCard.innerHTML = `
+                <img src="${imgSrc}" alt="${name}" />
+                <p>${name}</p>
+                <button onclick="deleteClothing(this)">Delete</button>
+                <a href="donate.html?item=${encodeURIComponent(name)}" class="donate-btn">Donate</a> <!-- Donate button as a link -->
+            `;
+
+            const grid = document.getElementById(category);
+            if (grid) {
+                grid.appendChild(itemCard);
+            } else {
+                console.error(`Grid with ID '${category}' not found.`);
+            }
+
+            closeUploadModal();
+            clearForm();
+        };
+
+        reader.onerror = function () {
+            alert('Failed to read the image file.');
+        };
+
+        reader.readAsDataURL(imageInput.files[0]);
+    }
+
+    // Function to handle the "Donate" button click
+    function donateClothing(itemName) {
+        const donatePageUrl = `donate.html?item=${encodeURIComponent(itemName)}`;
+        window.location.href = donatePageUrl; // Redirect to the donate page
+    }
+  </script>
 </body>
 </html>
